@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 font-sans min-h-[200vh] relative">
+<body class="bg-gray-100 font-sans min-h-[240vh] relative">
 
 <div id="homePage" class="h-full p-6">
   <h1 class="text-4xl font-bold mb-6">NomNomNom 🍽️</h1>
@@ -45,7 +45,7 @@
 </div>
 
 {{-- Food Filter --}}
-<div id="foodFilterWidget" class="absolute top-110 right-8 bg-white p-4 rounded-2xl shadow-xl w-96 z-50">
+<div id="foodFilterWidget" class="absolute top-[550px] right-8 bg-white p-4 rounded-2xl shadow-xl w-96 z-50">
   <h3 class="font-semibold mb-3">Food Filter 🚫</h3>
 
   <div class="flex gap-2 mb-4">
@@ -123,6 +123,43 @@
   </div>
 </div>
 
+{{-- 7 Days Widget --}}
+<!-- Changed width to stretch automatically by anchoring both left and right sides -->
+<div id="daysWidget" class="absolute top-[550px] left-8 right-[450px] w-auto bg-white p-6 rounded-2xl shadow-xl z-50">
+  <h3 class="text-xl font-semibold mb-4">Meal Plan Days 📅</h3>
+  
+  <div class="grid grid-cols-3 gap-4">
+    
+    <!-- Top Row -->
+    <div class="bg-gray-50 hover:bg-gray-200 border border-gray-300 rounded-xl aspect-square flex items-center justify-center text-xl font-medium cursor-pointer transition">
+      Monday
+    </div>
+    <div class="bg-gray-50 hover:bg-gray-200 border border-gray-300 rounded-xl aspect-square flex items-center justify-center text-xl font-medium cursor-pointer transition">
+      Tuesday
+    </div>
+    <div class="bg-gray-50 hover:bg-gray-200 border border-gray-300 rounded-xl aspect-square flex items-center justify-center text-xl font-medium cursor-pointer transition">
+      Wednesday
+    </div>
+    
+    <!-- Middle Row -->
+    <div class="bg-gray-50 hover:bg-gray-200 border border-gray-300 rounded-xl aspect-square flex items-center justify-center text-xl font-medium cursor-pointer transition">
+      Thursday
+    </div>
+    <div class="bg-gray-50 hover:bg-gray-200 border border-gray-300 rounded-xl aspect-square flex items-center justify-center text-xl font-medium cursor-pointer transition">
+      Friday
+    </div>
+    <div class="bg-gray-50 hover:bg-gray-200 border border-gray-300 rounded-xl aspect-square flex items-center justify-center text-xl font-medium cursor-pointer transition">
+      Saturday
+    </div>
+    
+    <!-- Bottom Row (Centered) -->
+    <div class="col-start-2 bg-gray-50 hover:bg-gray-200 border border-gray-300 rounded-xl aspect-square flex items-center justify-center text-xl font-medium cursor-pointer transition">
+      Sunday
+    </div>
+    
+  </div>
+</div>
+
 {{-- Calorie Calculator --}}
 <div id="calculatorPage" class="hidden py-12 flex justify-center">
   <div class="bg-white p-8 rounded-2xl shadow w-[400px]">
@@ -195,7 +232,7 @@
     document.getElementById('foodFilterWidget').classList.remove('hidden');
     window.scrollTo(0, 0);
   }
-
+  
   // --- NEW Food Filter Logic (Checkboxes) ---
   function selectAllFoods() {
     const checkboxes = document.querySelectorAll('.food-checkbox');
